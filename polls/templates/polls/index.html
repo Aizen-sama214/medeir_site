@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--  The head contains Meta-data -->
+    <!-- Use html+Tab to get the boilerplate  -->
+    <!-- Use cmd+/ to get the html comment line -->
+    <meta charset="utf-8">
+    <title> This is the Title! </title>
+  </head>
+  <body>
+    <!-- The body contains the actual content -->
+    {% if list %}
+        <ul>
+        {% for i in list %}
+            <li><a href="{{ i.0.image.url }}/">{{ i.0.img_name }}</a>
+
+            <img src="{{ i.1.image.url }}" ></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+
+    <a href = "{% url 'polls:entry' %}">Entry form</a>
+  </body>
+</html>
+
+
+
+
+
